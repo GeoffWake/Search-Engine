@@ -11,7 +11,7 @@
 ///idea do a publishers, author, title and then feed the function/object into html
 
 
-const bookURL = "https://www.googleapis.com/books/v1/volumes?q=${box.value}";
+const bookURL = "https://www.googleapis.com/books/v1/volumes?q=";
 
 SearchUrl = (searchTerm) => {
     return bookURL + searchTerm;
@@ -19,10 +19,10 @@ SearchUrl = (searchTerm) => {
 
 //console.log(SearchUrl("Javascript"))
 
-const search = async (searchTerm) => {
-const requestPromise = fetch(SearchUrl(searchTerm));
-const response = await requestPromise;
-const searchData = await response.json(); ///This is returning the individual data/volume relating to search term
+//const search = async (searchTerm) => {
+//const requestPromise = fetch(SearchUrl(searchTerm));
+//const response = await requestPromise;
+//const searchData = await response.json(); ///This is returning the individual data/volume relating to search term
 //console.log(searchData)
 ////to access title searchData is the whole object, inside of searchData then items, items array[0], then volume info then title
 
@@ -68,18 +68,25 @@ const box= document.getElementById("searchBox")
 //const box= document.getElementById("searchBox")
 
 
-
-button.addEventListener('click', (i) => {
+///Only existing within the event listener
+button.addEventListener('click', (e) => {
     const box= document.getElementById("searchBox")
-    i.preventDefault();
-    console.log(box.value)
+    const bookURL = "https://www.googleapis.com/books/v1/volumes?q=";
+    e.preventDefault();
+    
+    searchTerm = (box.value)
+    console.log(document.getElementById("searchBox").value)
+    console.log(bookURL+searchTerm) ///way of getting complete website and search term///turn into a function
+    const search1 = async (searchTerm) => {
+        const requestPromise1 = fetch(SearchUrl(searchTerm)):
+        const response = await requestPromise1
+        const searchData
+    } 
     
 });
 
 
 console.log(bookURL)
+console.log(box.value)
 
-
-/// >   
-///onsubmit="return false"
-
+console.log(document.getElementById("searchBox").value)

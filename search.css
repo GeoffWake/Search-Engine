@@ -12,4 +12,31 @@ button {
   font-size: 20px;
 }
 
+.grid {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-gap: 10px;
+  margin-top: 40px;
+}
+.grid__item {
+  border: solid 1px black;
+  font-size: 30px;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+}
+
+.search {
+  display: block;
+  text-align: center;
+}
+
+.move {
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
 /*# sourceMappingURL=search.css.map */
