@@ -12,31 +12,75 @@ button {
   font-size: 20px;
 }
 
-.grid {
-  display: flex;
-  text-align: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  grid-gap: 70px;
-  margin-top: 40px;
-}
-.grid__item {
-  border: solid 1px black;
-  font-size: 30px;
-  width: 100px;
-  height: 100px;
-  align-items: center;
-}
-
 .search {
   display: block;
   text-align: center;
 }
 
-.move {
-  display: block;
+.items {
+  border: 1px solid white;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin: 1px;
+  padding: 20px;
+  text-align: center;
+}
+
+.items2 {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  width: 40vw;
+  align-items: center;
+}
+
+p {
+  border: 1px solid white;
+  width: 40vw;
+  display: flex;
+  text-overflow: ellipsis;
+  font-size: 30px;
+}
+
+.container {
+  margin-top: 100px;
+  margin-left: 50px;
+  border: 2px white solid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+}
+
+.page {
+  margin-bottom: 150px;
+  margin-top: 100px;
+}
+
+image {
+  margin-top: 5px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 80px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /*# sourceMappingURL=search.css.map */

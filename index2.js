@@ -1,6 +1,13 @@
-const bookURL = "https://www.googleapis.com/books/v1/volumes?q=";
+
 
 gridpostions = ["grid1", "grid2", "grid3", "grid4", "grid5", "grid6", "grid7", "grid8", "grid9", "grid10",]
+
+titlepostion = ["title1", "title2", "title3", "title4", "title5", "title6", "title7", "title8", "title9", "title10",]
+
+authorpostions = ["author1", "author2", "author3", "author4", "author5", "author6", "author7", "author8", "author9", "author10",]
+
+pictureposistion = ["picture1", "picture2", "picture3", "picture4", "picture5", "picture6", "picture7", "picture8", "picture9", "picture10"]
+
 ///add an event listener to submit button
 const button = document.getElementById("submit")
 const box= document.getElementById("searchBox")
@@ -8,10 +15,11 @@ const box= document.getElementById("searchBox")
 //const box= document.getElementById("searchBox")
 
 
-
+const bookURL = "https://www.googleapis.com/books/v1/volumes?q=";
 ///Event Listener to pull search term
 button.addEventListener('click', (e) => {
     const box= document.getElementById("searchBox")
+    
     const bookURL = "https://www.googleapis.com/books/v1/volumes?q=";
     e.preventDefault();
     searchTerm = (box.value)
@@ -34,61 +42,62 @@ const search = async(searchTerm) => {
    ///Book details array
 const results= searchData.items.map((volume) => {
     const output= {}
-    output.title = volume.volumeInfo.title
-    //output.subtitle = volume.volumeInfo.subtitle
-    
-    //output.author=volume.volumeInfo.author
- //output.description= volume.volumeInfo.description
+   if (volume.volumeInfo.title){
+       output.title=volume.volumeInfo.title
+   }else {
+        output.title= "Unknown";
+   } if (volume.volumeInfo.authors) {
+       output.author= volume.volumeInfo.authors[0]
+   } else {
+       output.author= "Unknown";
+   }if (volume.volumeInfo.imageLinks) {
     output.image = volume.volumeInfo.imageLinks;
-    
-   //console.log(output.image.thumbnail)
-
-    //firstbox information
-    
-    //const displayOne =document.getElementById("grid1")
-    //const info=document.createTextNode(output.title)
-    //displayOne.appendChild(info)
-
+   } else {
+    output.image = "Unknown"
+   }
+   output.description= volume.volumeInfo.description
+   console.log(output)
 
     return output
 
-
+    
 })
-//const displayOne =document.getElementById("grid1")
-//console.log(results[0].title) ///Result of function 
-//const info=document.createTextNode(results[i].title)
- //   displayOne.appendChild(info//
-
-    for (let i = 0; i < gridpostions.length; i++) {
-        const fred = document.getElementById(gridpostions[i]);
-
-       const title=document.createTextNode(results[i].title)
-       //const info2=document.createTextNode(results[i].description)
-
-       ///Display Image
-       const img = document.createElement("img")
-      img.src= results[i].image.thumbnail;
-       console.log(results[i].description)
-       //const info3=document.createTextNode( results[i].image.thumbnail)
-       ///( results[i].image.thumbnail)
-        //console.log(info3)
-        //let img =document.createElement("img");
-       
-        
 
 
 
 
-        ///Fred this appends to Page
+///Append Titles to title posistion
+///const f4= titlepostion.items.map((volume) => {}
 
-        fred.appendChild(img)
+//const pos = titlepostion.map((i)=>  
+for (let i = 0; i < titlepostion.length; i++){
+    const fred = document.getElementById(titlepostion[i]);
+    
+   const title=document.createTextNode(results[i].title)
+   
+  
+   fred.appendChild(title)
+   
+}
+////Appends authors to author posistion
 
-        
-       fred.appendChild(title)
-        //fred.appendChild(info2)
-       
+for (let i = 0; i < pictureposistion.length; i++) {
+    const fred3 = document.getElementById(pictureposistion[i]);
 
+    const img = document.createElement("img")
+    img.src= results[i].image.thumbnail;
 
-    }
+   
+   fred3.appendChild(img)
 }
 
+for (let i = 0; i < authorpostions.length; i++) {
+    const fred1 = document.getElementById(authorpostions[i]);
+
+   const author=document.createTextNode(results[i].author)
+   fred1.appendChild(author)
+}
+
+
+
+}

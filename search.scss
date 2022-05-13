@@ -3,6 +3,7 @@ input[type=text] {
     margin-top: 8px;  
     font-size: 20px;  
     border: 2px solid;  
+    
     }  
 
 button {  
@@ -14,28 +15,6 @@ button {
         font-size: 20px;  
         }  
 
-.grid {
-       display: flex;
-        text-align: center;
-        flex-wrap: wrap;
-        justify-content: center;
-        grid-gap: 70px;
-        margin-top: 40px;
-        
-        
-        
-        
-        
-
-            &__item {
-                border: solid 1px black;
-                font-size: 30px;
-                width: 100px;
-                height: 100px;
-                
-                align-items: center;
-            }
-        }
 
 
 .search {
@@ -45,10 +24,87 @@ button {
     
 }
 
-.move { 
-    display: block;
+
+
+.items {
+    border: 1px solid white;
     align-items: center;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    //width: 500px;
+    width: 250px;
+    margin: 1px;
+    padding: 20px;
+    text-align: center;
    
+    
 }
 
+.items2{
+    border: 1px solid white;
+     display: flex;
+   flex-direction: row; ///Puts paragraph on side
+    width: 40vw;
+    align-items: center;
+}
+
+
+
+
+p { 
+    border: 1px solid white;
+    width: 40vw;
+    
+    display: flex;
+    text-overflow: ellipsis;
+   ///font-size: 25px;
+    
+    font-size: 30px;
+}
+
+.container {
+    
+    margin-top: 100px;
+    margin-left: 50px ;
+    border: 2px white solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    //width: 80vw;
+    
+    
+
+}
+.page{
+    margin-bottom: 150px;
+    margin-top: 100px;
+    
+}
+
+image {
+    margin-top: 5px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+h2
+    {
+        font-size: 35px;
+        font-family: Arial, Helvetica, sans-serif;
+       
+    }
+
+h3 {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+///
+
+h1 {
+
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif;;
+}
